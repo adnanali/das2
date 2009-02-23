@@ -7,3 +7,30 @@ lalalala
 lalala
 lala
 la
+
+-- *required*
+
+$ sudo gem sources -a http://gems.github.com
+$ sudo gem install why-hpricot
+
+
+-- *usage* (so far)
+
+/mp/find/by_postal_code.html?postal_code=m1s5b2[&js=true&var=var_name]
+
+return in html data about the mp
+
+[options]
+js=true - will include a json object with the html
+var=var_name - by default json object will be put in "mp_info", this will override
+
+/mp/find/by_postal_code.js?postal_code=m1s5b2[&var=varname]
+
+returns json object of mp data
+
+[options]
+var=var_name - by default only the json object is returned, 
+this will return in the format:
+
+var var_name = JSON_OBJECT;
+
