@@ -66,9 +66,11 @@ class Mp
     def get_page(url)
       resp = ""
       p = URI.parse(url)
+      path = p.path 
+      path = path + "?" + p.query if p.query
       http = Net::HTTP.new(p.host)
       http.start do |http|
-        req = Net::HTTP::Get.new(p.path + "?" + p.query,
+        req = Net::HTTP::Get.new(path,
           {"User-Agent" => "spider"})
         response = http.request(req)
         resp = response.body
