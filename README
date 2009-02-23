@@ -34,3 +34,6 @@ this will return in the format:
 
 var var_name = JSON_OBJECT;
 
+-- *credits*
+
+Data gathered from: http://www2.parl.gc.ca/Parlinfo/Compilations/HouseOfCommons/MemberByPostalCode.aspx?Menu=HOC
