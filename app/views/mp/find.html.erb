@@ -1,0 +1,42 @@
+<div id="mp_info">
+  <h2 class="name"><%= @mp_info['name'] %></h2>
+  <p class="riding"><em>Riding</em> <span><%= @mp_info['riding'] %><span></p>
+  <p class="party"><em>Party</em> <span><%= @mp_info['party'] %></span></p>
+  <div class="contact">
+    <div class="parliamentary">
+      <h3>Parliamentary Address</h3>
+      <p class="phone"><em>Phone</em> <span><%= @mp_info['parliamentary_address']['telephone']%></span></p>
+      <% unless @mp_info['parliamentary_address']['fax'].blank?  %>
+        <p class="fax"><em>Fax</em> <span><%= @mp_info['parliamentary_address']['fax']%></span></p>
+      <% end %>
+      <% unless @mp_info['parliamentary_address']['email'].blank?  %>
+        <p class="email"><em>Email</em> <span><%= @mp_info['parliamentary_address']['email'] %></span></p>
+      <% end %>
+      <p class="address"><em>Address</em>
+        <span>
+          <%= @mp_info['parliamentary_address']['address'].gsub("\n", "<br />\n") %>
+        </span>
+      </p>
+    </div>
+    <div class="local">
+      <h3>Local Address</h3>
+      <p class="phone"><em>Phone</em> <span><%= @mp_info['local_address']['telephone']%></span></p>
+      <% unless @mp_info['local_address']['fax'].blank?  %>
+        <p class="fax"><em>Fax</em> <span><%= @mp_info['local_address']['fax']%></span></p>
+      <% end %>
+      <% unless @mp_info['local_address']['email'].blank?  %>
+        <p class="email"><em>Email</em> <span><%= @mp_info['local_address']['email'] %></span></p>
+      <% end %>
+      <p class="address"><em>Address</em>
+        <span>
+          <%= @mp_info['local_address']['address'].gsub("\n", "<br />\n") %>
+        </span>
+      </p>
+    </div>
+  </div>
+  <% unless params[:js].blank? %>
+    <script type="text/javascript">
+      var <%= @var_name %> = <%= @mp_info.to_json %>;
+    </script>
+  <% end %>
+</div>

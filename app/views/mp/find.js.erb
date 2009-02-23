@@ -1,0 +1,3 @@
+<%= "var " + params[:var] + " = " if params[:var] -%>
+<%= @mp_info.to_json -%>
+<%= ";" if params[:var] -%>
