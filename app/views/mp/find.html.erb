@@ -36,7 +36,7 @@
   </div>
   <% unless params[:js].blank? %>
     <script type="text/javascript">
-      var <%= @var_name %> = <%= @mp_info.to_json %>;
+      var <%= params[:var] || "mp_info" %> = <%= @mp_info.to_json %>;
     </script>
   <% end %>
 </div>
